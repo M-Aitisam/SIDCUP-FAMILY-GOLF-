@@ -10,14 +10,7 @@ src :url("../Rejouice-Headline\ \(1\).ttf");
     padding: 0;
     
 }
-video {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    z-index: -1;
-    position: fixed;
-    border-radius: 50%;
-  }
+
 body {
     font-family: rej;
     /* padding: 10px; */
@@ -51,11 +44,13 @@ body {
     align-items: center;
     border-bottom: 1px solid black;
     /* background-color: var(--primary); */
-    background-color: rgb(29, 28, 28);
     padding: 30px;
     width: 100%;
     box-shadow:  10px 10px 20px black;
     font-size:1.5rem;
+    margin: -2.5rem 0 2rem 0;
+    position: relative;
+    background: rgb(37, 37, 37);
   
 }
 
@@ -104,59 +99,58 @@ a{
     margin: 10px auto;
     padding: 10px;
     width: 98%;
-  border: 1px solid var(--primary);
+  border: 1px solid beige;
 border-radius: 13px;
 
-background: #131c12;
 }
 
 
 section {
 
     width: 100%;
-    height: 350px;
+    height: 100%;
     position: relative;
     overflow: auto;
     
 }
 
 section p{
-    color: aquamarine;
+    color:#3c9de2;
 }
-#golf {
-    border: 2px solid rgb(255, 255, 255);
+#top {
+    border: 1px solid black;
     border-radius: 0.5rem;
     display: flex;
     text-align: center;
-    width: 20%;
+    width: auto;
     margin-left: 70%;
     font-weight: bold;
      justify-content: center;
     font-family: rej;
-    font-size: 125%;
- 
+    font-size: 1rem;
+   background-color: var(--secondary);
 }
 
-#about {
+#golf{
     border: 1px solid black;
     border-radius: 0.5rem;
     text-align: center;
-    width: 20%;
+    width: auto;
     margin-left: 70%;
     font-weight: bold;
-    font-size: 125%;
-   
+    font-size: 1rem;
+    background-color:var(--secondary);
 }
 
 #advent{
     border: 1px solid black;
     border-radius: 0.5rem;
     text-align: center;
-    width: 20%;
+    width: auto;
     margin-left: 70%;
     font-weight: bold;
-    font-size: 125%;
-
+    font-size: 1rem;
+    background-color:var(--secondary)
 }
 
 p {
@@ -184,9 +178,32 @@ p {
     .item3 {
         grid-column: 3;
     }
+
+    .container {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #moving-text .con h1 {
+        font-size: 6vw;
+        /* background-color: lightblue; */
+        display: inline-block;
+    }
+    
+
+    #moving-text .con #gola {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        display: inline-block;
+        background-color: #FE320A;
+        margin: 5vw 2vw 0.5vw  2vw;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    
+    
     .box {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -207,6 +224,27 @@ p {
         grid-column: 1 / 3;
         grid-row: 2 / 3;
     }
+    .container {
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #moving-text .con h1 {
+        font-size: 5vw;
+        /* background-color: lightblue; */
+        display: inline-block;
+    }
+    
+
+    #moving-text .con #gola {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        display: inline-block;
+        background-color: #FE320A;
+        margin: 5vw 2vw -1vw  2vw;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -233,7 +271,12 @@ p {
         grid-column: 1;
         grid-row: 2;
     }
-
+    .container {
+        width: 23rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
     .item3 {
         grid-column: 1;
         grid-row: 3;
@@ -248,7 +291,6 @@ p {
         margin: 10px 0;
     }
 }
-
 
 #page2 {
    
@@ -277,14 +319,14 @@ p {
 }
 
 #moving-text h1 {
-    font-size: 6vw;
+    font-size: 4vw;
     /* background-color: lightblue; */
     display: inline-block;
 }
 
 #gola {
-    height: 70px;
-    width: 70px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     display: inline-block;
     background-color: #FE320A;

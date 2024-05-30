@@ -22,17 +22,40 @@ h4all.forEach(function (elem) {
   });
 });
 
+// Nav Responsiveness
+document.addEventListener("DOMContentLoaded", function () {
+  const menuIcon = document.getElementById("menu-icon");
+  const menuItems = document.getElementById("menu-items");
+
+  menuIcon.addEventListener("click", function () {
+    menuIcon.classList.toggle("show-menu");
+    menuItems.classList.toggle("show-menu");
+  });
+
+  // Close the menu if a menu item is clicked
+  const menuLinks = document.querySelectorAll("#menu-items a");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      menuIcon.classList.remove("show-menu");
+      menuItems.classList.remove("show-menu");
+    });
+  });
+});
+
+//  Gsap animation 
 gsap.to("#nav", {
   backgroundColor: "#000",
   duration: 0.5,
-  height: "110px",
+
+  // Scroll trigger
   scrollTrigger: {
+    height: "110px",
     trigger: "#nav",
     scroller: "body",
     // markers:true,
     start: "top -10%",
     end: "top -11%",
-    scrub: 1,
+    scrub: 1, //repaet  scrolling ki bases per
   },
 });
 
@@ -112,3 +135,5 @@ gsap.from("#page4 h1", {
 });
 
 // Thanks itna aage tak aane ke liye lekin pura code utha ke copy paste karne ki jagah khud ek baar banane ka try karna, kuch naya seekhne ko milega!
+
+

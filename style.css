@@ -32,6 +32,9 @@ body::-webkit-scrollbar-thumb {
 body {
   overflow-x: hidden;
 }
+
+
+/* Cursor  start */
 #cursor {
   height: 20px;
   width: 20px;
@@ -50,7 +53,13 @@ body {
   filter: blur(80px);
   z-index: 9;
   transition: all linear 0.4s;
+  
 }
+
+/* Cursor end */
+
+
+/* Nav  start */
 #nav {
   height: 130px;
   width: 100%;
@@ -66,12 +75,42 @@ body {
 #nav img {
   height: 4.5vw;
 }
-#nav h4 {
+
+
+#menu-icon {
+  display: none; /* Initially hide the menu icon */
+  cursor: pointer;
+}
+
+#menu-icon span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 6px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+#menu-items {
+  display: flex;
+  gap: 20px;
+}
+
+#menu-items a {
+  text-decoration: none;
+}
+
+#menu-items h4 {
   text-transform: uppercase;
   font-weight: 500;
   cursor: pointer;
   font-size: 1.15vw;
+  transition: color 0.3s ease-in-out;
 }
+
+
+
+
 video {
   height: 100%;
   width: 100%;
@@ -85,6 +124,8 @@ video {
   background-color: rgba(0, 0, 0, 0.39);
 }
 
+
+/*  Page 1 Start */
 #page1 {
   height: 100vh;
   width: 100%;
@@ -143,6 +184,13 @@ video {
   scale: 0.4;
   background-color: #95c11e;
 }
+
+
+/*  Page 1 End */
+
+
+
+/*  Page 2 Start */
 #page2 {
   min-height: 100vh;
   width: 100%;
@@ -304,6 +352,7 @@ video {
   width: 14%;
 }
 
+/*  Page 3 Start */
 #page3 {
   height: 100vh;
   width: 100%;
@@ -333,6 +382,9 @@ video {
   bottom: 30%;
   right: 15%;
 }
+
+
+/* Page 4 start */
 #page4 {
   height: 30vh;
   width: 100%;
@@ -387,10 +439,13 @@ video {
   color: #000;
   -webkit-text-stroke: 2px #fff;
 }
+/* Page 4 End*/
+
+
 #footer {
   height: 40vh;
-  width: 100%;
   background: linear-gradient(to left bottom, #119f3a 0%, #a3d421 80%);
+  width: 100%;
   position: relative;
   display: flex;
   align-items: center;
@@ -441,4 +496,254 @@ video {
   font-weight: 600;
   line-height: 20px;
   margin-bottom: 8px;
+}
+
+
+
+
+/* Nav REsponsiveness */
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  #nav {
+    padding: 0 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    height: auto;
+  }
+
+  #menu-icon {
+    display: block; /* Show the menu icon */
+  }
+
+  #menu-items {
+    display: none; /* Initially hide the menu items */
+   
+  }
+
+  #menu-items.show-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    padding: 20px;
+    position: absolute;
+    top: 80px; /* Adjust as needed */
+    right: 0;
+    width: 100%;
+    max-height: 500px; /* Adjust as needed */
+    overflow-y: auto;
+  }
+
+  #menu-items a {
+    margin-bottom: 10px;
+  }
+
+  #menu-items h4 {
+    font-size: 18px;
+  }
+
+  #menu-items.show-menu h4 {
+    color: #95c11e;
+  }
+
+  #menu-icon.show-menu span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+
+  #menu-icon.show-menu span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menu-icon.show-menu span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+}
+
+/* page1 */
+
+/* Media query for tablets and PCs */
+@media (min-width: 768px) {
+  /* Reduce the font size of the scroller text */
+  #scroller h4 {
+    font-size: 80px; /* Adjust as needed */
+  }
+
+  /* Adjust the width of the scroller items */
+  #scroller-in {
+    width: 200%; /* Adjust as needed */
+  }
+
+  /* Reduce the font size of the about-us text */
+  #about-us-in h3 {
+    font-size: 3rem; /* Adjust as needed */
+  }
+
+  /* Make the images responsive by adjusting their width */
+  #about-us img {
+    width: 40%; /* Adjust as needed */
+  }
+
+  /* Make the cards responsive by adjusting their width */
+  .card {
+    width: 22%; /* Adjust as needed */
+  }
+
+  /* Adjust the width of the green-div images */
+  #green-div img {
+    width: 10%; /* Adjust as needed */
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  /* Reduce the font size of the scroller text */
+  #scroller h4 {
+    font-size: 60px; /* Adjust as needed */
+  }
+
+  #page1 #arrow{
+    width: 4rem;
+    height: 4rem;
+    margin-left: 2rem;
+  }
+  /* Adjust the width of the scroller items */
+  #scroller-in {
+    width: 300%; /* Adjust as needed */
+  }
+
+  /* Reduce the font size of the about-us text */
+  #about-us-in h3 {
+    font-size: 2rem; /* Adjust as needed */
+  }
+  #about-us-in p{
+    font-size: 0.5rem;
+  }
+
+  /* Make the images responsive by adjusting their width */
+  #about-us img {
+    width: 30%; /* Adjust as needed */
+  }
+
+  /* Make the cards responsive by adjusting their width */
+  .card {
+    width: 90%; /* Adjust as needed */
+  }
+
+  /* Adjust the width of the green-div images */
+  #green-div img {
+    width: 30%; /* Adjust as needed */
+  }
+}
+
+/* page 2 */
+
+/* Add this media query for smaller screens */
+@media (max-width: 768px) {
+  /* Adjust the font size and width of h2 on page 2 */
+  #page2 h2 {
+    font-size: 24px;
+    width: 80%;
+  }
+
+  /* Enable scrolling for the scroller container */
+  #scroller {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+
+  /* Adjust the font size of h4 elements inside the scroller */
+  #scroller h4 {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+}
+
+/* for page 3 */
+
+
+/* Media query for tablets and PCs */
+@media (min-width: 768px) {
+  #page3 > p {
+    font-size: 2rem; /* Adjust as needed */
+    width: 70%; /* Adjust as needed */
+    line-height: 2.5rem; /* Adjust as needed */
+  }
+
+  #page3 img {
+    height: 80px; /* Adjust as needed */
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  #page3 {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px; /* Adjust as needed */
+  }
+
+  #page3 > p {
+    font-size: 1.5rem; /* Adjust as needed */
+    width: 90%; /* Adjust as needed */
+    line-height: 2rem; /* Adjust as needed */
+  }
+
+  #page3 img {
+    height: 40px; /* Adjust as needed */
+  }
+
+  #page3 #colon1 {
+    left: 10%;
+    top: 20%;
+  }
+
+  #page3 #colon2 {
+    bottom: 25%;
+    right: 10%;
+  }
+}
+
+
+/* Page 4 */
+
+/* Responsive Styles for #page4 h1 */
+
+/* Media query for tablets and PCs */
+@media (min-width: 768px) {
+  #page4 h1 {
+    font-size: 4rem; /* Adjust as needed */
+    top: -10%; /* Adjust as needed */
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  #page4 h1 {
+    font-size: 2rem; /* Adjust as needed */
+    top: -5%; /* Adjust as needed */
+  }
+}
+
+/* General Styling for #page4 h1 */
+#page4 h1 {
+  font-size: 6.4vw;
+  position: absolute;
+  top: -15%;
+  font-weight: 900;
+  font-family: gilroy;
+  color: #000;
+  -webkit-text-stroke: 2px #fff;
+}
+
+@media (min-width: 300px) and (max-width: 500) {
+  #page4 h1 {
+    font-size: 3vw;
+    position: absolute;
+    top: -15%;
+    font-weight: 900;
+    font-family: gilroy;
+    color: #000;
+    -webkit-text-stroke: 2px #fff;
+  }
 }
